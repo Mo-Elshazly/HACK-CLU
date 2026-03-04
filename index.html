@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Calculator</title>
+<body>
+    <label for ="fuel">My Love for hack club </label>
+    <meter id="fuel" min="0" max="100" low="90" high="20" optimum="80" value="100"></meter>
+    <p>Hello <mark>HACK CLUB</mark> is the best club in the world</p>
+    <pre>
+        Hello 
+            Hello   
+                Hello 
+                    Hello   
+                        Hello
+    </pre>
+    <ol>
+        <li>Hack Club</li>
+        <li>IS</li>
+        <li>THe</li>
+        <li>BEST CLUB</li>
+        <li>IN THE WORLD</li>
+    </ol>
+    <details>
+        <summary>CLick her for more details</summary>
+        NOTHING TO SEE HERE
+    </details>
+    <script>
+        function addmarquee(text ,direction="left" , scrollspeed= 6 )
+        {
+            const marquee = document.createElement("marquee");
+            marquee.textcontent= "Im the bes thack club member";
+            marquee.setattribute("left" , left);
+            marquee.setAttribute("scrollamount", scrollSpeed);
+        }
+        addmarquee("welcom eto the hackclub","left", 10)
+    </script>
+    <video controls width="300"><source src="VID_20260218_205327_604.mp4"><source src="VID_20260218_205327_604.mp4  " type="video/mp4" /></video>
+    <h2>Simple calculator</h2>
+    <label>First Number</label>
+    <input type="number" id="num1">
+    <label>Second Number</label>
+    <input type="number" id="num2">
+    <label>Operation</label>
+    <select id="operation">
+        <option value="multiply">Multiply *</option>
+        <option value="divide">Divide /</option>
+        <option value="add">Add +</option>
+        <option value="subtract"> Subtract -</option>
+        
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <h3 id="result"></h3>
+    <script>
+function calculate() {
+  let n1 = parseFloat(document.getElementById("num1").value);
+  let n2 = parseFloat(document.getElementById("num2").value);
+  let operation = document.getElementById("operation").value;
+  let result;
+
+  if (isNaN(n1) || isNaN(n2)) {
+    document.getElementById("result").innerText = "Please enter valid numbers.";
+    return;
+  }
+
+  if (operation === "multiply") {
+    result = n1 * n2;
+    if (n2 === 0) {
+      document.getElementById("result").innerText = "Cannot divide by zero.";
+      return;
+    }
+  } else if (operation === "divide") {
+    result = n1 / n2;
+  } else if (operation === "add") {
+    result = n1 + n2;
+  } else if (operation === "subtract") {
+    
+    result = n1 -  n2;
+  }
+
+  document.getElementById("result").innerText = "Result: " + result;
+}
+</script>
+</body>
+</html>
